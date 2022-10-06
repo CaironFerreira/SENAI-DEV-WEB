@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="shortcut icon" href="imagens/icone-musica.png" type="image/x-icon">
+    <title>Calculadera</title>
+</head>
+<style>
+    .planodefundo{
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        /* margin-top: 10vh; */
+        margin-left: auto;
+        margin-right: auto;
+        /* adicionando imagem de fundo */
+        background: url('imagens/planodefundo.jpg');
+        background-size: cover;
+    }
+    .row{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: 100vh;
+    }
+    .flex-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .jumbotron{
+        margin:0%;
+    }
+    @font-face{
+        font-family: Youtube;
+        src: url("YouTubeSansDarkExtrabold.otf") format("otf");
+    }
+    #titulo{
+        font-family: Youtube;
+        font-size: 2.5em;
+    }
+    #icone-musica{
+        padding-right: 1%;
+    }
+</style>
+<body>
+    <div class="planodefundo">
+    <!-- Linha 2 onde estão os elementos que constituem o formulário de login, são formatados pela classe "form" e "Jumbotron" -->
+        <div class="row flex-container">
+        <!-- A coluna está ocupando 4 espaços de um total de 12, com a classe flex-container ele fica formatada ao centro da página utilizando-se do flex-box do CSS-->
+            <div class="col-4">
+            <!-- A tag form cria o formulário, que por sua vez é formatado pelas classes form e jumbotron do Bootstrap-->
+                <form class="jumbotron" method="get" action="area-circulo.php">
+                    <div class="mb-3 flex-title">
+                        <label for="exampleInputEmail1" class="form-label" id="titulo">
+                            Calculadera
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">
+                            Área do círculo
+                        </label>
+                        <input type="number" type="number" step="0.01" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="raio">
+                        <div id="emailHelp" class="form-text">
+                            <?php
+                                $raio = $_GET["raio"];
+                                $result=($raio**2)*3.1415;
+                                echo "Resultado: Aproximadamente $result";
+                            ?>
+                        </div>
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">
+                            Senha
+                        </label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">
+                            Manter conectado
+                        </label>
+                    </div> -->
+                    <button type="submit" class="btn btn-primary">Calcular</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
