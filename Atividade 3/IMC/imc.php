@@ -19,9 +19,10 @@ ACESSO PERMITIDO caso a senha seja válida. -->
         margin-left: auto;
         margin-right: auto;
         /* adicionando imagem de fundo */
-        background: url('imagens/background.jpg');
+        background: url('imagens/planoDeFundo.jpg');
         background-size: cover;
-        filter: blur(5px);
+        background-repeat: no-repeat;
+        background-position: center;
         z-index: -1;
         border: 0%;
     }
@@ -48,7 +49,7 @@ ACESSO PERMITIDO caso a senha seja válida. -->
         /* background-color: hsla(210, 16%, 93%, 0.5); */
         border-radius: 1rem;
         margin:0%;
-        background-image: linear-gradient(#3b657ad7, #142026da);
+        background-image: linear-gradient(#fc3903, #d1024e);
     }
     .modal{
         /*  */
@@ -97,7 +98,7 @@ ACESSO PERMITIDO caso a senha seja válida. -->
                         ?>
                         <!--Campo do sexo  -->
                         <label for="sexo" class="visually-hidden">Isto é para os leitores de tela -Sexo</label>
-                        <input type="number" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-10 w-100 fw-semibold text-light" required="true" placeholder="Sexo 1 para Feminino e 2 para Masculino" id="sexo" name="sexo" min="1" max="2">
+                        <input type="number" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-10 w-100 fw-semibold text-light" required="true" placeholder="Sexo 1 para Fem e 2 para Masc" id="sexo" name="sexo" min="1" max="2">
                         <!-- Campo da altura -->
                         <label for="altura" class="visually-hidden">Isto é para os leitores de tela -Altura</label>
                         <input type="number" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-10 w-100 fw-semibold text-light" required="true" placeholder="Altura em metros" id="altura" name="altura" max="3" step="0.01">
