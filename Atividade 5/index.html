@@ -1,23 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Galeria com grid</title>
 </head>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: aliceblue;
+    }
+    .container{
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 25vw 38vw 37vw;
+        grid-template-areas:    "um dois tres"
+                                "quatro quatro tres"
+                                "cinco cinco seis";
+    }
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        margin: 0;
+        padding: 0;
+        object-position: center center;
+    }
+    .item{
+        position: relative;
+        margin: 0;
+        padding: 7px;
+    }
+    
+</style>
 <body>
-    <!-- Header -->
-    <div>
-
-    </div>
-    <!-- Body -->
-    <div>
-
-    </div>
-    <!-- Footer -->
-    <div>
-        
+    <div class="container">
+        <div class="item" style="grid-area: um;">
+            <img src="imagens/um.jpg" alt="pc codando">
+        </div>
+        <div class="item" style="grid-area: dois;">
+            <img src="imagens/dois.jpg" alt="pc codando">
+        </div>
+        <div class="item" style="grid-area: tres;">
+            <img src="imagens/tres.jpg" alt="pc codando">
+        </div>
+        <div class="item" style="grid-area: quatro;">
+            <img src="imagens/quatro.jpg" alt="pc codando">
+        </div>
+        <div class="item" style="grid-area: cinco;">
+            <img src="imagens/cinco.jpg" alt="pc codando">
+        </div>
+        <div  class="item" style="grid-area: seis;">
+            <img src="imagens/seis.jpg" alt="pc codando">
+        </div>    
     </div>
 </body>
 </html>
