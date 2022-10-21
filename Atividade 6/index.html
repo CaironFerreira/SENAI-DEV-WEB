@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Galeria</title>
+</head>
+<style>
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        margin: 0;
+        padding: 0.5vw;
+        object-position: center center;
+    }
+    .form-col{
+        padding: 0;
+        margin: 0;
+    }
+    .row{
+        padding: 0;
+        margin: 0;
+    }
+    .jumbotron {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+        /* background-color: hsla(210, 16%, 93%, 0.5); */
+        border-radius: 1rem;
+        margin:0%;
+        background-image: linear-gradient(#3b657af2, #142026f5);
+    }
+    .modal{
+        /*  */
+        --bs-modal-bg: #343a40f2;
+        --bs-modal-header-border-color: #f3fbffc8;
+        --bs-modal-header-border-width: 2px;
+        --bs-modal-footer-border-color: #f3fbffc8;
+        --bs-modal-footer-border-width: 2px;
+        --bs-modal-border-width: 2px;
+        --bs-modal-border-color: rgba(0, 128, 0, 0.737);
+    }
+</style>
+<body>
+    <script src="bootstrap.js"></script>
+    <header>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 p-0">
+                <!-- Navbar do bootstrap -->
+                <nav class="navbar navbar-expand-lg bg-dark " style="position: fixed; width: 100vw; padding-right: 1vw;">
+                    <div class="container-fluid">
+                        <!-- Marca do site -->
+                        <a class="navbar-brand text-light fs-5" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <!-- Link pra Homepage -->
+                                <li class="nav-item">
+                                    <label for="cadastro" data-bs-toggle="modal" data-bs-target="#cadastro">
+                                        <!-- O data-bs-toggle serve para adicionar mais informações ao elemento -->
+                                        <!-- O data-bs-target indica qual elemento html vai ser aberto, funciona com o JavaScript -->
+                                        <a class="nav-link active text-light fs-5" aria-current="page" data-bs-target="#cadastro" href="#">Cadastre-se</a>
+                                        <!-- Link que chama o modal -->
+                                    </label>
+                                </li>
+                                <!-- Link -->
+                                <li class="nav-item">
+                                    <label for="login" data-bs-toggle="modal" data-bs-target="#login">
+                                        <!-- O data-bs-toggle serve para adicionar mais informações ao elemento -->
+                                        <!-- O data-bs-target indica qual elemento html vai ser aberto, funciona com o JavaScript -->
+                                        <a class="nav-link active text-light fs-5" aria-current="page" data-bs-target="#login" href="#">Login</a>
+                                        <!-- Link que chama o modal -->
+                                    </label>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success fw-bold" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                <!-- fim da navbar -->
+            </div>
+        </div>
+        <!-- Modal cadastro-->
+        <div class="modal fade" id="cadastro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-light fw-semibold" id="exampleModalLabel">Cadastre-se em Nosso Site</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                        <div class="modal-body">
+                            <!-- Logo do modal -->
+                            <div class="w-auto d-flex flex-row justify-content-center">
+                                <div class="bg-white d-flex flex-row align-items-center justify-content-center" style="border-radius: 50%; width: 16%; height: 4rem;">
+                                    <img src="imagens/bootstrap.svg" class="img-fluid" style="width: 60%; height: 60%;" alt="Logo">
+                                </div>
+                            </div>
+                            <!--Campo de email  -->
+                            <label for="imput-email" class="visually-hidden">Isto é para os leitores de tela -Email</label>
+                            <input type="email" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-50 w-100 fw-semibold text-light" autocomplete="email" required="true" placeholder="Email" id="imput-email" name="email-cadastro">
+                            <!-- Campo de senha -->
+                            <label for="imput-senha" class="visually-hidden">Isto é para os leitores de tela -senha</label>
+                            <input type="password" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-50 w-100 fw-semibold text-light" autocomplete="off" placeholder="Senha" required="true" id="imput-senha" name="senha-cadastro">
+                            <!-- Campo de repetir senha -->
+                            <label for="imput--repetir-senha" class="visually-hidden">Isto é para os leitores de tela imput--repetir-senha</label>
+                            <input type="password" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-50 w-100 fw-semibold text-light" autocomplete="off" placeholder="Repita a senha" required="true" id="imput-senha" name="repete-senha-cadastro">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark fw-bold border-opacity-50" data-bs-dismiss="modal" style="border-color:rgba(0, 128, 0, 0.737);">Cancelar</button>
+                            <button type="submit" class="btn btn-dark fw-bold border-opacity-50" style="border-color:rgba(0, 128, 0, 0.737);">Feito!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Fim do modal cadastro-->
+        <!-- Modal Login -->
+        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-light fw-semibold" id="exampleModalLabel">Login</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                        <div class="modal-body">
+                            <!-- Logo do modal -->
+                            <div class="w-auto d-flex flex-row justify-content-center">
+                                <div class="bg-white d-flex flex-row align-items-center justify-content-center" style="border-radius: 50%; width: 16%; height: 4rem;">
+                                    <img src="imagens/bootstrap.svg" class="img-fluid" style="width: 60%; height: 60%;" alt="Logo">
+                                </div>
+                            </div>
+                            <!--Campo de email  -->
+                            <label for="imput-email" class="visually-hidden">Isto é para os leitores de tela -Email</label>
+                            <input type="email" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-50 w-100 fw-semibold text-light" autocomplete="email" required="true" placeholder="Email" id="imput-email" name="email-cadastro">
+                            <!-- Campo de senha -->
+                            <label for="imput-senha" class="visually-hidden">Isto é para os leitores de tela -senha</label>
+                            <input type="password" class="form-control-plaintext border-bottom border-2 border-top-0 border-light border-opacity-50 w-100 fw-semibold text-light" autocomplete="off" placeholder="Senha" required="true" id="imput-senha" name="senha-cadastro">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark fw-bold border-opacity-50" data-bs-dismiss="modal" style="border-color:rgba(0, 128, 0, 0.737);">Cancelar</button>
+                            <button type="submit" class="btn btn-dark fw-bold border-opacity-50" style="border-color:rgba(0, 128, 0, 0.737);">Feito!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- fim modal login -->
+    </header>
+    <main>
+        <!-- Usando bootstrap -->
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 form-col" style="height: auto;">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 form-col" style="height: 40vh;">
+                        <img src="imagens/um.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 col-sm-12 form-col" style="height: 40vh;">
+                        <img src="imagens/dois.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 form-col" style="height: 50vh;">
+                        <img src="imagens/tres.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 form-col" style="height: 90vh;">
+                <img src="imagens/seis.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 form-col" style="height: 50vh;">
+                <img src="imagens/cinco.jpg" alt="">
+            </div>
+            <div class="col-lg-6 col-sm-12 form-col" style="height: 50vh;">
+                <img src="imagens/quatro.jpg" alt="">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
